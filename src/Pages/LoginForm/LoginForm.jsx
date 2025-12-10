@@ -1,16 +1,45 @@
 import NavBar from '@/Components/NavBar/NavBar';
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router';
-import { EyeOff,Eye } from 'lucide-react';
+import { EyeOff, Eye } from 'lucide-react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import { toast, Toaster } from 'sonner';
+import { auth } from '@/FireBase/FireBase.init';
+import { AuthContext } from '@/Components/Context/AuthContext/AuthContext';
+const googleProvider = new GoogleAuthProvider();
+
+
 
 const LoginForm = () => {
     const [show, setShow] = useState(false);
     const ShowPassword = () => {
         setShow(!show);
     }
+
+
+    const { signInWithGoogle, signInUser } = use(AuthContext);
+    // console.log(SignInWithGoogle,SignInUser)
+    // Google Sign In
+    const GoogleSignInHandle = () => {
+        signInWithGoogle(auth, googleProvider)
+            .then(result => { toast("Logged In With Google") })
+            .catch(error => console.log(error));
+
+    }
+    //Local User Sign In
+    const HandleLoginFormSubmit = (event) => {
+        event.preventDefault();
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        signInUser(email, password)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+
+    }
     const navigate = useNavigate();
     return (
         <div>
+            <Toaster position="top-right"></Toaster>
             <NavBar></NavBar>
             <div id="login-page">
                 <div className="min-h-screen bg-linear-to-br from-primary-lightest via-white to-green-50 flex items-center justify-center p-6">
@@ -57,7 +86,7 @@ const LoginForm = () => {
                                     <p className="text-gray-600 text-lg">Enter your credentials to continue</p>
                                 </div>
 
-                                <form id="login-form" className="space-y-6">
+                                <form onSubmit={HandleLoginFormSubmit} className="space-y-6">
                                     <div id="login-error" className="bg-red-50 text-red-600 px-5 py-4 rounded-2xl text-sm border border-red-100 hidden"></div>
 
                                     <div className="space-y-2">
@@ -66,7 +95,7 @@ const LoginForm = () => {
                                         </label>
                                         <div className="relative">
                                             <i className="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                                            <input id="login-email" type="email" placeholder="you@example.com" className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:outline-none focus:border-primary focus:bg-white transition-all" />
+                                            <input name="email" type="email" placeholder="you@example.com" className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:outline-none focus:border-primary focus:bg-white transition-all" />
                                         </div>
                                     </div>
 
@@ -93,7 +122,7 @@ const LoginForm = () => {
                                         </button>
                                     </div>
 
-                                    <button type="button" className="w-full py-4 bg-primary text-white rounded-2xl hover:bg-primary-light transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 font-medium">
+                                    <button type="submit" className="w-full py-4 bg-primary text-white rounded-2xl hover:bg-primary-light transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 font-medium">
                                         Sign In
                                     </button>
 
@@ -106,7 +135,7 @@ const LoginForm = () => {
                                         </div>
                                     </div>
 
-                                    <button type="button" className="w-full flex items-center justify-center gap-3 px-4 py-3.5 bg-white border-2 border-gray-200 rounded-2xl hover:border-gray-300 hover:bg-gray-50 transition-all">
+                                    <button type="button" onClick={GoogleSignInHandle} className="w-full flex items-center justify-center gap-3 px-4 py-3.5 bg-white border-2 border-gray-200 rounded-2xl hover:border-gray-300 hover:bg-gray-50 transition-all">
                                         <img src="https://www.google.com/favicon.ico" alt="Google" className="w-5 h-5" />
                                         <span className="text-gray-700 text-sm font-medium">Continue with Google</span>
                                     </button>
