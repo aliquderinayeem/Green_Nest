@@ -14,7 +14,7 @@ const Footer = () => {
                                 </div>
                                 <span className="text-xl font-semibold">GreenNest</span>
                             </div>
-                            <p className="text-gray-400 mb-4 max-w-md">
+                            <p className="text-gray-400 mb-4">
                                 Your trusted partner in creating beautiful indoor gardens.
                                 We bring nature into your home with expert care and guidance.
                             </p>

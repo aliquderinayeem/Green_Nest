@@ -4,6 +4,8 @@ import LandingPage from "@/Pages/LandingPage";
 import Plants from "@/Pages/Plants";
 import LoginForm from "@/Pages/LoginForm/LoginForm";
 import RegisterForm from "@/Pages/RegisterForm/RegisterForm";
+import NotFound from "@/Pages/NotFound/NotFound";
+import MyProfile from "@/Pages/MyProfie/MyProfile";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
   {
     path: 'register',
     Component: RegisterForm
+  },
+  {
+    path:'myprofile',
+    Component:MyProfile,
+  },
+  {
+    path:'*',
+    Component:NotFound,
   }
 ]);
 export default router;
