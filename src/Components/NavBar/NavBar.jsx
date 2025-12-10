@@ -13,8 +13,8 @@ const NavBar = () => {
         }
     </>
     const linksLeft1 = <>
-        <NavLink to='login' className="px-4 py-2 text-primary hover:bg-primary-light rounded-lg hover:text-white transition-colors">Login</NavLink>
-        <NavLink to='register' className="px-6 py-2 text-primary rounded-lg hover:bg-primary-light hover:text-white transition-colors">Register</NavLink>
+        <NavLink to='/login' className="px-4 py-2 text-primary hover:bg-primary-light rounded-lg hover:text-white transition-colors">Login</NavLink>
+        <NavLink to='/register' className="px-6 py-2 text-primary rounded-lg hover:bg-primary-light hover:text-white transition-colors">Register</NavLink>
     </>
     return (
         <>
@@ -26,7 +26,7 @@ const NavBar = () => {
                             <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                                 <i className="fas fa-leaf text-white text-sm"></i>
                             </div>
-                            <span className="text-primary text-xl font-semibold">GreenNest</span>
+                            <NavLink to='/' className="text-primary text-xl font-semibold">GreenNest</NavLink>
                         </div>
 
                         <div className="hidden md:flex items-center gap-8">

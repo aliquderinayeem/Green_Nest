@@ -1,12 +1,15 @@
 import Footer from '@/Components/Footer/Footer';
+import Hero from '@/Components/Hero/Hero';
 import NavBar from '@/Components/NavBar/NavBar';
 import React from 'react';
+import { Outlet } from 'react-router';
 
 const LandingPage = () => {
     return (
         <div>
             <NavBar></NavBar>
-            <div className='min-h-1000px h-full'>gg</div>
+            <Hero></Hero>
+            <Outlet></Outlet>
             <Footer></Footer>
         </div>
     );
