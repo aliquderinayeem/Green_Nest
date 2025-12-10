@@ -1,10 +1,12 @@
+import NavBar from '@/Components/NavBar/NavBar';
 import React from 'react';
 
 const Plants = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+        <NavBar></NavBar>
+        
+        </>
     );
 };
 

@@ -47,14 +47,15 @@ const NavBar = () => {
                                     <div className="relative">
                                         <button className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 transition-colors" onClick={() => { setExpand(!expand) }}>
                                             <div className="w-9 h-9 rounded-full bg-primary-light flex items-center justify-center overflow-hidden">
-                                                <img id="user-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400" alt="User" className="w-full h-full object-cover" />
+                                                <img id="user-avatar" src={user ? user.photoURL : 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400'} alt="User" className="w-full h-full object-cover" />
                                             </div>
-                                            <span id="user-name" className="text-sm text-gray-700">Plant Lover</span>
+                                            <span id="user-name" className="text-md font-bold text-gray-700">{user ? user.displayName : ''}</span>
                                             <i className="fas fa-chevron-down text-gray-400 text-xs"></i>
                                         </button>
                                         <div className={`absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 border border-gray-100 ${!expand ? 'hidden' : ''}`}>
                                             <button className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-50 flex items-center gap-2">
-                                                <NavLink to='/myprofile'>                                                <i className="fas fa-user text-sm"></i>
+                                                <NavLink to='/myprofile'>
+                                                    <i className="fas fa-user text-sm mr-3"></i>
                                                     My Profile</NavLink>
                                             </button>
                                             <button onClick={handleSignOut} className="w-full px-4 py-2 text-left text-red-600 hover:bg-red-50 flex items-center gap-2">

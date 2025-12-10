@@ -1,0 +1,74 @@
+[
+  {
+    "plantId": 1,
+    "plantName": "Monstera Deliciosa",
+    "category": "Tropical",
+    "price": 45.99,
+    "rating": 4.8,
+    "availableStock": 12,
+    "careLevel": "Medium",
+    "description": "Large split leaves that thrive in bright, indirect light and add a bold tropical look.",
+    "image": "https://images.unsplash.com/photo-1634803534299-56378af8fa70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRvb3IlMjBwbGFudHMlMjBtb25zdGVyYXxlbnwxfHx8fDE3NjQ0ODY3Mzl8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 2,
+    "plantName": "Succulent Collection",
+    "category": "Low Maintenance",
+    "price": 24.99,
+    "rating": 4.9,
+    "availableStock": 25,
+    "careLevel": "Easy",
+    "description": "A mix of hardy succulents requiring minimal watering, perfect for desks and windowsills.",
+    "image": "https://images.unsplash.com/photo-1621512367176-03782e847fa2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdWNjdWxlbnQlMjBwbGFudHN8ZW58MXx8fHwxNzY0NDg2NzM5fDA&ixlib=rb-4.1.0&q=80&w=400",
+    "providerName": "Nature’s Touch"
+  },
+  {
+    "plantId": 3,
+    "plantName": "Fiddle Leaf Fig",
+    "category": "Statement Plant",
+    "price": 65.00,
+    "rating": 4.7,
+    "availableStock": 8,
+    "careLevel": "Medium",
+    "description": "Tall plant with broad leaves, ideal for living rooms; prefers bright filtered light.",
+    "image": "https://images.unsplash.com/photo-1545239705-1564e58b9e4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaWRkbGUlMjBsZWFmJTIwZmlnfGVufDF8fHx8MTc2NDQyNjY2MHww&ixlib=rb-4.1.0&q=80&w=400",
+    "providerName": "EverBloom Growers"
+  },
+  {
+    "plantId": 4,
+    "plantName": "Snake Plant",
+    "category": "Air Purifying",
+    "price": 32.99,
+    "rating": 4.9,
+    "availableStock": 15,
+    "careLevel": "Easy",
+    "description": "Hardy upright leaves, tolerates neglect and low light, excellent natural air purifier.",
+    "image": "https://images.unsplash.com/photo-1593482892290-f54927ae1bb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbmFrZSUyMHBsYW50fGVufDF8fHx8MTc2NDM5OTY0OHww&ixlib=rb-4.1.0&q=80&w=400",
+    "providerName": "GreenLeaf Nursery"
+  },
+  {
+    "plantId": 5,
+    "plantName": "Golden Pothos",
+    "category": "Hanging",
+    "price": 28.99,
+    "rating": 4.8,
+    "availableStock": 20,
+    "careLevel": "Easy",
+    "description": "Trailing vine with golden-green leaves, thrives in low light and grows quickly indoors.",
+    "image": "https://images.unsplash.com/photo-1596724878582-76f1a8fdc24f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3Rob3MlMjBwbGFudHxlbnwxfHx8fDE3NjQzOTk2NDh8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 6,
+    "plantName": "Cactus Garden",
+    "category": "Desert",
+    "price": 34.99,
+    "rating": 4.6,
+    "availableStock": 10,
+    "careLevel": "Easy",
+    "description": "A curated set of desert cacti, requiring bright sunlight and minimal watering.",
+    "image": "https://images.unsplash.com/photo-1654609678730-d241a2b2eb8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYWN0dXMlMjBjb2xsZWN0aW9ufGVufDF8fHx8MTc2NDQxMTU2M3ww&ixlib=rb-4.1.0&q=80&w=400",
+    "providerName": "DesertBloom Co."
+  }
+]
