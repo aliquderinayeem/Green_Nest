@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Minimalist Living Room",
+    "image": "https://images.unsplash.com/photo-1634513980958-2ea35f23de68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwbGFudHMlMjBob21lJTIwZGVjb3J8ZW58MXx8fHwxNzY0NDg2NzQyfDA&ixlib=rb-4.1.0&q=80&w=600",
+    "description": "Clean lines with strategic plant placement"
+  },
+  {
+    "id": 2,
+    "title": "Boho Bedroom Oasis",
+    "image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600",
+    "description": "Layered greenery creates a calming retreat"
+  },
+  {
+    "id": 3,
+    "title": "Modern Office Space",
+    "image": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600",
+    "description": "Productivity-boosting plants for your workspace"
+  },
+  {
+    "id": 4,
+    "title": "Urban Jungle Kitchen",
+    "image": "https://images.unsplash.com/photo-1556912167-f556f1f39fdf?w=600",
+    "description": "Fresh herbs and decorative plants combined"
+  },
+  {
+    "id": 5,
+    "title": "Balcony Garden",
+    "image": "https://images.unsplash.com/photo-1585213303783-2044a119f9e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib3RhbmljYWwlMjBnYXJkZW4lMjBpbnRlcmlvcnxlbnwxfHx8fDE3NjQ0ODY3NDF8MA&ixlib=rb-4.1.0&q=80&w=600",
+    "description": "Transform small outdoor spaces"
+  },
+  {
+    "id": 6,
+    "title": "Bathroom Sanctuary",
+    "image": "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600",
+    "description": "Humidity-loving plants for spa vibes"
+  }
+]

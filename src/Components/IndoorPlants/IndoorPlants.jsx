@@ -1,27 +1,29 @@
 import React from 'react';
 import PlantCard from '../PlantCard/PlantCard';
 import Useplants from '@/Hooks/CustomHook';
+import { useNavigate } from 'react-router';
 
 const IndoorPlants = () => {
+    const navigate=useNavigate();
     const {plants,loading}=Useplants();
-    // console.log(plants.length)
+    const HomePlants=plants.slice(0,3);
     return (
         <>
-            <section class="py-16 px-4 bg-white">
-                <div class="max-w-7xl mx-auto">
-                    <div class="text-center mb-12">
-                        <h2 class="text-primary text-3xl font-bold mb-4">Top Rated Indoor Plants</h2>
-                        <p class="text-gray-600 max-w-2xl mx-auto">Discover our most loved plants, carefully selected and nurtured by our experts</p>
+            <section className="py-16 px-4 bg-white">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-12">
+                        <h2 className="text-primary text-3xl font-bold mb-4">Top Rated Indoor Plants</h2>
+                        <p className="text-gray-600 mx-auto">Discover our most loved plants, carefully selected and nurtured by our experts</p>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {
-                            plants.map(plant=><PlantCard plant={plant}></PlantCard>)
+                            HomePlants.map((plant,index)=><PlantCard key={index} plant={plant}></PlantCard>)
                         }
                     </div>
 
-                    <div class="text-center mt-12">
-                        <button onclick="showPage('plants')" class="px-8 py-3 bg-primary text-white rounded-lg hover:bg-primary-light transition-colors text-lg font-medium">View All Plants</button>
+                    <div className="text-center mt-12">
+                        <button className="px-8 py-3 bg-primary text-white rounded-lg hover:bg-primary-light transition-colors text-lg font-medium"onClick={() => navigate('/plants')}>View All Plants</button>
                     </div>
                 </div>
             </section>

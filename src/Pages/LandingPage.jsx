@@ -1,7 +1,10 @@
+import EcoDecor from '@/Components/EcoDecor/EcoDecor';
 import Footer from '@/Components/Footer/Footer';
+import GreenExpert from '@/Components/GreenExpert/GreenExpert';
 import Hero from '@/Components/Hero/Hero';
 import IndoorPlants from '@/Components/IndoorPlants/IndoorPlants';
 import NavBar from '@/Components/NavBar/NavBar';
+import PlantCareStatic from '@/Components/PlantCare/PlantCareStatic';
 import React from 'react';
 import { Outlet } from 'react-router';
 
@@ -11,7 +14,9 @@ const LandingPage = () => {
             <NavBar></NavBar>
             <Hero></Hero>
             <IndoorPlants></IndoorPlants>
-            <Outlet></Outlet>
+            <PlantCareStatic></PlantCareStatic>
+            <GreenExpert></GreenExpert>
+            <EcoDecor></EcoDecor>
             <Footer></Footer>
         </div>
     );
