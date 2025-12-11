@@ -1,6 +1,6 @@
 import NavBar from '@/Components/NavBar/NavBar';
 import React, { use, useState } from 'react';
-import { Navigate, useNavigate } from 'react-router';
+import { Navigate, useLocation, useNavigate } from 'react-router';
 import { EyeOff, Eye } from 'lucide-react';
 import { AuthContext } from '@/Components/Context/AuthContext/AuthContext';
 import { toast, Toaster } from 'sonner';
@@ -13,6 +13,7 @@ const RegisterForm = () => {
     const [error, setError] = useState('Error!!!');
     const [success, setSuccess] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
     const ShowPassword = () => {
         setShow(!show);
     }
@@ -20,8 +21,8 @@ const RegisterForm = () => {
     // Google Sign In
     const GoogleSignInHandle = () => {
         signInWithGoogle(auth, googleProvider)
-        .then(()=>navigate('/'))
-        .catch((err)=>{console.log(err)})
+            .then(result => {navigate(location.state || '/') })
+            .catch(error => console.log(error));
 
     }
     const handleRegister = (event) => {
