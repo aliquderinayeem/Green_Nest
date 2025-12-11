@@ -20,6 +20,8 @@ const RegisterForm = () => {
     // Google Sign In
     const GoogleSignInHandle = () => {
         signInWithGoogle(auth, googleProvider)
+        .then(()=>navigate('/'))
+        .catch((err)=>{console.log(err)})
 
     }
     const handleRegister = (event) => {
