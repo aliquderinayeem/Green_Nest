@@ -6,6 +6,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import { toast, Toaster } from 'sonner';
 import { auth } from '@/FireBase/FireBase.init';
 import { AuthContext } from '@/Components/Context/AuthContext/AuthContext';
+import Footer from '@/Components/Footer/Footer';
 const googleProvider = new GoogleAuthProvider();
 
 
@@ -26,7 +27,7 @@ const LoginForm = () => {
     // Google Sign In
     const GoogleSignInHandle = () => {
         signInWithGoogle(auth, googleProvider)
-            .then(result => { navigate(location.state || '/') })
+            .then(result => {navigate(location.state || '/') })
             .catch(error => console.log(error));
 
     }
@@ -44,14 +45,14 @@ const LoginForm = () => {
         //     return;
         // }
         signInUser(email, password)
-            .then(res => navigate(location.state || '/'))
+            .then(res => {if(res.success){navigate(location.state || '/')}})
             .catch(err => console.log(err))
 
     }
     const ForgotPaswordHandle = (event) => {
         event.preventDefault();
         const email = emailRef.current.value;
-        console.log(email);
+        // console.log(email);
         resetPassword(email);
     }
     return (
@@ -175,6 +176,7 @@ const LoginForm = () => {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

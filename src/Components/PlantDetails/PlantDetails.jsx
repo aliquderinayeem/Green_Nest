@@ -3,19 +3,23 @@ import { useNavigate, useParams } from 'react-router';
 import { SpinnerNew } from '../Spinner/SpinnerNew';
 import { ArrowLeft, Calendar, Heart, ShoppingCart, Star } from 'lucide-react';
 import { toast, Toaster } from 'sonner';
+import NavBar from '../NavBar/NavBar';
+import Footer from '../Footer/Footer';
+import NotFound from '@/Pages/NotFound/NotFound';
 
 const PlantDetails = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
     const [plants, setPlants] = useState([]);
     const { id } = useParams();
-    const DummyFunctionality=(e)=>{
+    const DummyFunctionality = (e) => {
         e.preventDefault();
-        const name=e.target.name.value;
-        const date=e.target.date.value;
-        const time=e.target.time.value;
+        const name = e.target.name.value;
+        const date = e.target.date.value;
+        const time = e.target.time.value;
         // console.log(name,date,time)
-        toast.success(`${name} booked a slot for Consultation at ${date}, ${time}`)
+        toast.success(`${name} booked a slot for Consultation at ${date}, ${time}`);
+        e.target.reset();
     }
     useEffect(() => {
         fetch('../plants.json')
@@ -27,9 +31,12 @@ const PlantDetails = () => {
     }, [])
     if (!loading) {
         const desiredPlant = plants.find(plant => plant.plantId == id);
-        const { plantName, category, price, rating, availableStock, careLevel, Bdescription, image, providerName } = desiredPlant;
+        if(desiredPlant){
+                    const { plantName, category, price, rating, availableStock, careLevel, Bdescription, image, providerName } = desiredPlant;
         return (
             <>
+                <title>{plantName}</title>
+                <NavBar></NavBar>
                 <div className="min-h-screen bg-primary-lightest py-8 px-4">
                     <Toaster richColors position="top-right" ></Toaster>
                     <div className="max-w-7xl mx-auto">
@@ -69,7 +76,7 @@ const PlantDetails = () => {
                                                 ))}
                                             </div>
                                             <span className="text-sm text-gray-600">
-                                                {rating} 
+                                                {rating}
                                             </span>
                                         </div>
                                     </div>
@@ -127,7 +134,7 @@ const PlantDetails = () => {
                         </div>
 
                         {/* Consultation Booking  */}
-                         <div className="bg-white rounded-lg shadow-lg p-8 mx-auto">
+                        <div className="bg-white rounded-lg shadow-lg p-8 mx-auto">
                             <div className="text-center mb-6">
                                 <Calendar className="w-12 h-12 text-primary mx-auto mb-3" />
                                 <h3 className="text-gray-800 text-[30px] mb-2">Book a Plant Care Consultation</h3>
@@ -136,13 +143,13 @@ const PlantDetails = () => {
                                 </p>
                             </div>
 
-                            <form onSubmit={DummyFunctionality}className="space-y-4">
+                            <form onSubmit={DummyFunctionality} className="space-y-4">
                                 <div>
                                     <label htmlFor="name" className="block text-gray-700 mb-2">
                                         Your Name
                                     </label>
                                     <input
-                                    required
+                                        required
                                         name="name"
                                         type="text"
                                         placeholder="Plant Lover"
@@ -156,7 +163,7 @@ const PlantDetails = () => {
                                             Preferred Date
                                         </label>
                                         <input
-                                        required
+                                            required
                                             name="date"
                                             type="date"
                                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -168,7 +175,7 @@ const PlantDetails = () => {
                                             Preferred Time
                                         </label>
                                         <input
-                                        required
+                                            required
                                             name="time"
                                             type="time"
                                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -185,8 +192,15 @@ const PlantDetails = () => {
                             </form>
                         </div>
                     </div>
-                </div></>
+                </div>
+                <Footer></Footer>
+            </>
         );
+        }else{
+            return(
+                <NotFound></NotFound>
+            )
+        }
     }
     if (loading) {
         return (

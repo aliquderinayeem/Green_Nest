@@ -29,6 +29,7 @@ const Plants = () => {
     }
     return (
         <>
+        <title>GreenNest-All Plants</title>
             <NavBar></NavBar>
             <div className="py-8 px-4 bg-primary-lightest">
                 <div className="max-w-7xl mx-auto">

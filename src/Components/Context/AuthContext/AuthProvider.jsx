@@ -20,15 +20,20 @@ const AuthProvider = ({ children }) => {
                     displayName: name,
                     photoURL: image,
                 })
+                return { success: true };
             })
             .catch(error => {
                 const errorMessage = error.message || "Registration failed";
                 setError(errorMessage);
-                error &&
-                    toast.error(error.message);
-                return;
+                if (error.message == "Firebase: Error (auth/email-already-in-use).") {
+                    // console.log(`${error.message}`)
+                    toast.error(`Email already in Use`);
+                } else {
+                    toast.error(`${error.message}`)
+                }
+                return { success: false, error: error.message };
             }
-            );
+            ).finally(() => setLoading(false));;;
     }
     const signInWithGoogle = () => {
         setLoading(true);
@@ -45,8 +50,21 @@ const AuthProvider = ({ children }) => {
     const signInUser = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
-            .then(() => toast.success("Logged In Successfully"))
-            .catch(error => console.log(error));
+            .then(() => {
+                toast.success("Sign In Successful");
+                return { success: true }
+            })
+            .catch(error => {
+                if (error.message == "Firebase: Error (auth/invalid-credential).") {
+                    // console.log(`${error.message}`)
+                    toast.error(`Invalid Credential`);
+                } else {
+                    toast.error(`${error.message}`)
+                }
+                return { success: false, error: error.message };
+            }
+            )
+            .finally(() => setLoading(false));;
     }
     const signOutUser = () => {
         setLoading(true);

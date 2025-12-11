@@ -4,12 +4,13 @@ import { Navigate, useNavigate } from 'react-router';
 import { EyeOff, Eye } from 'lucide-react';
 import { AuthContext } from '@/Components/Context/AuthContext/AuthContext';
 import { toast, Toaster } from 'sonner';
-import { GoogleAuthProvider} from 'firebase/auth';
+import { GoogleAuthProvider } from 'firebase/auth';
 import { auth } from '@/FireBase/FireBase.init';
+import Footer from '@/Components/Footer/Footer';
 const googleProvider = new GoogleAuthProvider();
 const RegisterForm = () => {
     const [show, setShow] = useState(false);
-    const [error, setError] = useState('');
+    const [error, setError] = useState('Error!!!');
     const [success, setSuccess] = useState(false);
     const navigate = useNavigate();
     const ShowPassword = () => {
@@ -31,11 +32,11 @@ const RegisterForm = () => {
         const terms = event.target.terms.checked;
         // Password Validation
         var passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
-        if(!passwordRegex.test(password)){
+        if (!passwordRegex.test(password)) {
             toast.error("Password must have minimum 8 characters in length,at least one uppercase English letter,at least one lowercase English letter,at least one digit,at least one special character");
             return;
         }
-        console.log(email,' ',name,' ',password);
+        // console.log(email, ' ', name, ' ', password);
         setError('');
         setSuccess(false);
         if (!terms) {
@@ -43,14 +44,17 @@ const RegisterForm = () => {
             toast(error);
             return;
         }
-        if(password!=confirmPassword){
+        if (password != confirmPassword) {
             toast.error("Passwords didn't match!!!!");
             return;
         }
         // Registering User
-        createUser(email, password,name,image)
-        .then(res=>navigate('/'))
-        .catch(err=>console.log(err))
+        createUser(email, password, name, image)
+            .then(() => {
+                navigate('/');
+                // console.log(res)
+            })
+            .catch(err => console.log(err))
 
     }
     return (
@@ -220,6 +224,7 @@ const RegisterForm = () => {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

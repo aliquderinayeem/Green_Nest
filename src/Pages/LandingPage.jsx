@@ -31,6 +31,7 @@ const LandingPage = () => {
 
     return (
         <div>
+            <title>GreenNest-Home</title>
             <NavBar />
             <Hero1 />
             <IndoorPlants  />

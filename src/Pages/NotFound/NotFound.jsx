@@ -1,7 +1,8 @@
 import React from 'react';
 import { Leaf, Home, Search, ArrowLeft } from 'lucide-react';
-import { NavLink } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 const NotFound = () => {
+    const navigate = useNavigate();
     return (
         <div className="bg-gradient-to-br from-primary-lightest via-white to-green-50 flex items-center min-h-screen justify-center p-6">
             <div className="max-w-4xl w-full">
@@ -31,17 +32,18 @@ const NotFound = () => {
                     {/* Action Buttons */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                         <NavLink to='/'>
-                        <button
+                            <button
 
-                            className="flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-2xl hover:bg-primary-light transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30"
-                        >
-                            <Home className="w-5 h-5" />
-                            <span>Back to Home</span>
-                        </button>
+                                className="flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-2xl hover:bg-primary-light transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30"
+                            >
+                                <Home className="w-5 h-5" />
+                                <span>Back to Home</span>
+                            </button>
                         </NavLink>
                         <button
 
                             className="flex items-center gap-3 px-8 py-4 bg-white text-gray-700 border-2 border-gray-200 rounded-2xl hover:border-gray-300 hover:bg-gray-50 transition-all"
+                            onClick={() => { navigate('/plants') }}
                         >
                             <Search className="w-5 h-5" />
                             <span>Browse Plants</span>
@@ -78,27 +80,28 @@ const NotFound = () => {
                         <p className="text-gray-600">Maybe these pages can help:</p>
                         <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
                             <button
-
+                                onClick={() => navigate('/')}
                                 className="text-primary hover:text-primary-light transition-colors hover:underline"
                             >
                                 Home
                             </button>
                             <span className="text-gray-300">•</span>
                             <button
-
+                                onClick={() => navigate('/')}
                                 className="text-primary hover:text-primary-light transition-colors hover:underline"
                             >
                                 Plant Care Tips
                             </button>
                             <span className="text-gray-300">•</span>
                             <button
-
+                                onClick={() => navigate('/')}
                                 className="text-primary hover:text-primary-light transition-colors hover:underline"
                             >
                                 Shop Plants
                             </button>
                             <span className="text-gray-300">•</span>
                             <button
+                                onClick={() => navigate('/login')}
                                 className="text-primary hover:text-primary-light transition-colors hover:underline"
                             >
                                 Sign In
