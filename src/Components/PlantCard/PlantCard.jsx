@@ -1,11 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 
 const PlantCard = ({plant}) => {
     // console.log(plant);
-    const {plantName,category,image,rating,description,price,availableStock}=plant;
+    const navigate=useNavigate();
+    const {plantName,category,image,rating,description,price,availableStock,plantId}=plant;
     return (
         <>
-            <div className="plant-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer">
+            <div className="plant-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer" onClick={()=>navigate(`/plants/${plantId}`)}>
                 <div className="relative h-64 overflow-hidden">
                     <img src={image} alt="Monstera Deliciosa" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
                     <div className="absolute top-3 right-3 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm text-primary font-medium">

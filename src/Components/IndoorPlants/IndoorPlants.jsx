@@ -3,7 +3,7 @@ import PlantCard from '../PlantCard/PlantCard';
 import { useNavigate } from 'react-router';
 import { SpinnerNew } from '../Spinner/SpinnerNew';
 
-const IndoorPlants = ({ onLoad }) => {
+const IndoorPlants = () => {
     const [HomePlants, setHomePlants] = useState([]);
     const navigate = useNavigate();
     // const {plants,loading}=Useplants();
@@ -13,9 +13,9 @@ const IndoorPlants = ({ onLoad }) => {
             .then(plants => {
                 const HomePlants = plants.slice(0, 3);
                 setHomePlants(HomePlants);
-                if (onLoad) {
-                    onLoad();
-                }
+                // if (onLoad) {
+                //     onLoad();
+                // }
             });
     }, );
     return (

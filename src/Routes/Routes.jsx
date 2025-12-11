@@ -6,6 +6,7 @@ import LoginForm from "@/Pages/LoginForm/LoginForm";
 import RegisterForm from "@/Pages/RegisterForm/RegisterForm";
 import NotFound from "@/Pages/NotFound/NotFound";
 import MyProfile from "@/Pages/MyProfie/MyProfile";
+import PlantDetails from "@/Components/PlantDetails/PlantDetails";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
   {
     path:'myprofile',
     Component:MyProfile,
+  },
+  {
+    path:'/plants/:id',
+    Component:PlantDetails,
+    // loader:fetch('./plants.json').then(res=>res.json()),
   },
   {
     path:'*',

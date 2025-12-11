@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import DecorCard from './DecorCard';
 
-const EcoDecor = ({ onLoad }) => {
+const EcoDecor = () => {
     const [firstSlice, setFirstSlice] = useState([]);
     const [secondSlice, setSecondSlice] = useState([]);
     const [expand, setExpand] = useState(false);
@@ -13,9 +13,9 @@ const EcoDecor = ({ onLoad }) => {
                 const decor2 = data.slice(3, 6);
                 setSecondSlice(decor2);
                 setFirstSlice(decor1);
-                if (onLoad) {
-                    onLoad();
-                }
+                // if (onLoad) {
+                //     onLoad();
+                // }
             });
     }, );
     return (

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Star, Quote } from 'lucide-react';
 const PlantCommunity = () => {
     const [testimonials,setTestimonials]=useState([])
-    const fetchdata=fetch('../plantcarecommunity.json').then(res=>res.json()).then(data=>setTestimonials(data))
+    fetch('../plantcarecommunity.json').then(res=>res.json()).then(data=>setTestimonials(data))
     return (
         <>
             <section className="py-16 bg-gradient-to-b from-white to-[#F8FFFE]">

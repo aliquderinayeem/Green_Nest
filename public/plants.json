@@ -8,6 +8,7 @@
     "availableStock": 12,
     "careLevel": "Medium",
     "description": "Large split leaves that thrive in bright, indirect light and add a bold tropical look.",
+    "Bdescription": "The Monstera Deliciosa is a classic tropical houseplant known for its dramatic fenestrated leaves that naturally develop splits as the plant matures. It thrives in warm, humid indoor environments and prefers bright, indirect sunlight. With proper care, it can grow into a large statement piece, making it ideal for living rooms, offices, or any space needing a lush, bold aesthetic. Its air‑purifying qualities and relatively forgiving nature make it a favorite among both beginners and experienced plant enthusiasts. Beyond its striking appearance, the Monstera is symbolic of vitality and growth, often used in interior design to bring a sense of energy and vibrancy. Regular pruning and occasional repotting allow it to flourish for years, making it not just a decorative plant but a long‑term companion in your indoor garden.",
     "image": "https://images.unsplash.com/photo-1634803534299-56378af8fa70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmRvb3IlMjBwbGFudHMlMjBtb25zdGVyYXxlbnwxfHx8fDE3NjQ0ODY3Mzl8MA&ixlib=rb-4.1.0&q=80&w=400",
     "providerName": "UrbanGreen Studio"
   },
@@ -20,6 +21,7 @@
     "availableStock": 25,
     "careLevel": "Easy",
     "description": "A mix of hardy succulents requiring minimal watering, perfect for desks and windowsills.",
+    "Bdescription": "This curated Succulent Collection features a variety of drought‑tolerant species that thrive on minimal care. Each plant is selected for its unique shape, texture, and color, creating a visually appealing arrangement suitable for small spaces. These succulents require infrequent watering and adapt well to indoor environments with moderate to bright light. Ideal for beginners, busy individuals, or anyone looking to add greenery without the maintenance demands of traditional houseplants. Their compact size makes them perfect for desks, shelves, and windowsills, while their resilience ensures they remain healthy even with occasional neglect. Over time, they can be propagated easily, allowing you to expand your collection or share with friends, making them both decorative and rewarding.",
     "image": "https://images.unsplash.com/photo-1621512367176-03782e847fa2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdWNjdWxlbnQlMjBwbGFudHN8ZW58MXx8fHwxNzY0NDg2NzM5fDA&ixlib=rb-4.1.0&q=80&w=400",
     "providerName": "Nature’s Touch"
   },
@@ -32,6 +34,7 @@
     "availableStock": 8,
     "careLevel": "Medium",
     "description": "Tall plant with broad leaves, ideal for living rooms; prefers bright filtered light.",
+    "Bdescription": "The Fiddle Leaf Fig is renowned for its large, violin‑shaped leaves and upright growth habit, making it a striking centerpiece in modern interior design. It thrives in bright, filtered light and appreciates consistent watering without over‑saturation. While it requires a bit more attention than low‑maintenance plants, its dramatic appearance and ability to elevate any room’s aesthetic make it a highly sought‑after indoor plant. Proper placement and care can help it grow into an impressive, tree‑like structure. Its bold foliage adds architectural interest, and when paired with minimalist décor, it creates a sophisticated look. Though sensitive to changes in environment, once established it rewards owners with steady growth and a commanding presence that transforms interiors.",
     "image": "https://images.unsplash.com/photo-1545239705-1564e58b9e4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaWRkbGUlMjBsZWFmJTIwZmlnfGVufDF8fHx8MTc2NDQyNjY2MHww&ixlib=rb-4.1.0&q=80&w=400",
     "providerName": "EverBloom Growers"
   },
@@ -44,6 +47,7 @@
     "availableStock": 15,
     "careLevel": "Easy",
     "description": "Hardy upright leaves, tolerates neglect and low light, excellent natural air purifier.",
+    "Bdescription": "The Snake Plant, also known as Sansevieria or Mother‑in‑Law’s Tongue, is one of the most resilient indoor plants available. Its tall, sword‑like leaves store water efficiently, allowing it to survive long periods of neglect. It thrives in low to bright light and is well‑known for its air‑purifying properties, filtering toxins and improving indoor air quality. This plant is perfect for bedrooms, offices, and low‑light corners where other plants may struggle. Its upright growth habit makes it a space‑saving option, while its tolerance for irregular watering makes it nearly indestructible. In addition to its practical benefits, the Snake Plant carries cultural symbolism of protection and positivity, often considered a plant that brings good energy into the home.",
     "image": "https://images.unsplash.com/photo-1593482892290-f54927ae1bb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbmFrZSUyMHBsYW50fGVufDF8fHx8MTc2NDM5OTY0OHww&ixlib=rb-4.1.0&q=80&w=400",
     "providerName": "GreenLeaf Nursery"
   },
@@ -56,6 +60,7 @@
     "availableStock": 20,
     "careLevel": "Easy",
     "description": "Trailing vine with golden-green leaves, thrives in low light and grows quickly indoors.",
+    "Bdescription": "Golden Pothos is a fast‑growing trailing vine known for its heart‑shaped leaves streaked with golden variegation. It adapts to a wide range of indoor conditions, including low light, and is extremely forgiving of irregular watering. Its cascading growth makes it ideal for hanging baskets, shelves, and high ledges. Beyond its beauty, it also contributes to cleaner indoor air, making it a practical and decorative addition to any home or workspace. Easy to propagate through cuttings, it allows plant owners to expand their collection effortlessly. Its versatility means it can be trained to climb or left to trail, offering multiple styling options. Often called the 'money plant,' it is also associated with prosperity and good fortune in many cultures.",
     "image": "https://images.unsplash.com/photo-1596724878582-76f1a8fdc24f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3Rob3MlMjBwbGFudHxlbnwxfHx8fDE3NjQzOTk2NDh8MA&ixlib=rb-4.1.0&q=80&w=400",
     "providerName": "UrbanGreen Studio"
   },
@@ -68,6 +73,7 @@
     "availableStock": 10,
     "careLevel": "Easy",
     "description": "A curated set of desert cacti, requiring bright sunlight and minimal watering.",
+    "Bdescription": "The Cactus Garden features a selection of hardy desert cacti, each chosen for its unique shape, texture, and growth pattern. These plants thrive in bright, direct sunlight and require very little water, making them ideal for sunny windowsills or warm indoor environments. Their sculptural forms add a modern, minimalist aesthetic to any space. This collection is perfect for plant lovers who appreciate low‑maintenance greenery with a bold, architectural look. Each cactus brings its own personality—some tall and columnar, others round and compact—creating a visually dynamic arrangement. Their slow growth and long lifespan make them excellent long‑term additions to your indoor plant collection, and their resilience ensures they remain healthy even in challenging conditions.",
     "image": "https://images.unsplash.com/photo-1654609678730-d241a2b2eb8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYWN0dXMlMjBjb2xsZWN0aW9ufGVufDF8fHx8MTc2NDQxMTU2M3ww&ixlib=rb-4.1.0&q=80&w=400",
     "providerName": "DesertBloom Co."
   }

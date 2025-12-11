@@ -11,19 +11,19 @@ import { SpinnerNew } from '@/Components/Spinner/SpinnerNew';
 import { useState } from 'react';
 
 const LandingPage = () => {
-    const [allComponentsLoaded, setAllComponentsLoaded] = useState(false);
-    const [loadedComponents, setLoadedComponents] = useState(0);
-    const totalComponentsToLoad = 2; // IndoorPlants + EcoDecor
+    // const [allComponentsLoaded, setAllComponentsLoaded] = useState(false);
+    // const [loadedComponents, setLoadedComponents] = useState(0);
+    // const totalComponentsToLoad = 2; // IndoorPlants + EcoDecor
 
-    const handleComponentLoaded = () => {
-        setLoadedComponents(prev => {
-            const newCount = prev + 1;
-            if(newCount >= totalComponentsToLoad) {
-                setAllComponentsLoaded(true);
-            }
-            return newCount;
-        });
-    };
+    // const handleComponentLoaded = () => {
+    //     setLoadedComponents(prev => {
+    //         const newCount = prev + 1;
+    //         if(newCount >= totalComponentsToLoad) {
+    //             setAllComponentsLoaded(true);
+    //         }
+    //         return newCount;
+    //     });
+    // };
 
     // if (!allComponentsLoaded) {
     //     return <SpinnerNew />;
@@ -33,10 +33,10 @@ const LandingPage = () => {
         <div>
             <NavBar />
             <Hero1 />
-            <IndoorPlants onLoad={handleComponentLoaded} />
+            <IndoorPlants  />
             <PlantCareStatic />
             <GreenExpert />
-            <EcoDecor onLoad={handleComponentLoaded} />
+            <EcoDecor />
             <PlantCommunity />
             <Footer />
         </div>
