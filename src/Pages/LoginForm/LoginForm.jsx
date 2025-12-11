@@ -1,6 +1,6 @@
 import NavBar from '@/Components/NavBar/NavBar';
-import React, { use, useState } from 'react';
-import { NavLink, useNavigate } from 'react-router';
+import React, { use, useRef, useState } from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router';
 import { EyeOff, Eye } from 'lucide-react';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { toast, Toaster } from 'sonner';
@@ -11,18 +11,22 @@ const googleProvider = new GoogleAuthProvider();
 
 
 const LoginForm = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    // console.log(location.state)
+    // const navigate=useNavigate();
     const [show, setShow] = useState(false);
     const ShowPassword = () => {
         setShow(!show);
     }
+    const emailRef=useRef(null);
 
-
-    const { signInWithGoogle, signInUser } = use(AuthContext);
+    const { signInWithGoogle, signInUser, resetPassword } = use(AuthContext);
     // console.log(SignInWithGoogle,SignInUser)
     // Google Sign In
     const GoogleSignInHandle = () => {
         signInWithGoogle(auth, googleProvider)
-            .then(result => { toast("Logged In With Google") })
+            .then(result => { navigate(location.state || '/') })
             .catch(error => console.log(error));
 
     }
@@ -31,12 +35,27 @@ const LoginForm = () => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
+        if (!email) {
+            toast.error("Write Your Email");
+            return;
+        }
+        // if(!password){
+        //     toast.error("Write Your Password Correctly");
+        //     return;
+        // }
         signInUser(email, password)
-            .then(res => console.log(res))
+            .then(res => navigate(location.state || '/'))
             .catch(err => console.log(err))
 
     }
-    const navigate = useNavigate();
+    const ForgotPaswordHandle = (event) => {
+        event.preventDefault();
+        const email = emailRef;
+        console.log(email.current.value);
+        resetPassword(email)
+            .then(() => alert("check mail"))
+            .catch(err => console.log(err))
+    }
     return (
         <div>
             <Toaster position="top-right"></Toaster>
@@ -95,7 +114,7 @@ const LoginForm = () => {
                                         </label>
                                         <div className="relative">
                                             <i className="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                                            <input name="email" type="email" placeholder="you@example.com" className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:outline-none focus:border-primary focus:bg-white transition-all" />
+                                            <input name="email" ref={emailRef} type="email" placeholder="you@example.com" className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:outline-none focus:border-primary focus:bg-white transition-all" />
                                         </div>
                                     </div>
 
@@ -117,7 +136,7 @@ const LoginForm = () => {
                                             <input type="checkbox" className="w-5 h-5 rounded-lg border-2 border-gray-300 text-primary focus:ring-2 focus:ring-primary/20 accent-primary cursor-pointer" />
                                             <span className="text-gray-600">Remember me</span>
                                         </label>
-                                        <button type="button" className="text-primary hover:text-primary-light transition-colors">
+                                        <button type="submit" className="text-primary hover:text-primary-light transition-colors" onClick={ForgotPaswordHandle}>
                                             Forgot password?
                                         </button>
                                     </div>

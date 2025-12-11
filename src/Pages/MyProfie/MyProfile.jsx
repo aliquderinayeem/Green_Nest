@@ -7,23 +7,28 @@ import React, { use, useState } from 'react';
 const MyProfile = () => {
     const [open, setOpen] = useState(false);
     const { user, updateUser } = use(AuthContext);
-    const handleProfileChange = (event) => {
+    //  const [loading, setLoading] = useState(false);
+    const handleProfileChange = async (event) => {
         event.preventDefault();
         const name = event.target.name.value;
-        const email = event.target.email.value;
-        const url = event.target.photo;
-        updateUser({ name, url });
+        const url = event.target.photo.value;
+        
+        // setLoading(true);
+        
+        try {
+            // Pass parameters separately, not as an object
+            const success = await updateUser(name, url);
+            if (success) {
+                setOpen(false);
+                // Optionally reset form
+                event.target.reset();
+            }
+        } catch (error) {
+            console.error("Update failed:", error);
+        } finally {
+            // setLoading(false);
+        }
     }
-
-    // if (user) {
-    //     const creationTime = user.metadata.creationTime; // "2024-01-15T10:30:00Z"
-    //     const lastSignInTime = user.metadata.lastSignInTime;
-    //     const createdAt = new Date(creationTime); // Convert to Date object
-    //     console.log(`Account created: ${user.metadata.creationTime}`);
-    //     console.log(`Last login: ${user.metadata.lastSignInTime}`);
-    // }
-
-    // console.log(user);
     if (user)
         return (
             <>
@@ -42,9 +47,9 @@ const MyProfile = () => {
                                             <img src={user ? user.photoURL : 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400'} alt="User" className="w-full h-full object-cover" />
                                         </div>
                                     </div>
-                                    <button className="absolute bottom-2 right-2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-light transition-colors shadow-lg">
+                                    {/* <button className="absolute bottom-2 right-2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-light transition-colors shadow-lg">
                                         <i className="fas fa-camera"></i>
-                                    </button>
+                                    </button> */}
                                 </div>
 
                                 {/* <!-- View Mode --> */}
@@ -117,11 +122,11 @@ const MyProfile = () => {
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <button type="button" className="flex-1 py-3 bg-primary text-white rounded-lg hover:bg-primary-light transition-colors flex items-center justify-center gap-2">
+                                        <button type="submit" className="flex-1 py-3 bg-primary text-white rounded-lg hover:bg-primary-light transition-colors flex items-center justify-center gap-2">
                                             <i className="fas fa-save"></i>
                                             Save Changes
                                         </button>
-                                        <button type="submit" className="flex-1 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                                        <button type="button" className="flex-1 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors" onClick={()=>setOpen(!open)}>
                                             Cancel
                                         </button>
                                     </div>

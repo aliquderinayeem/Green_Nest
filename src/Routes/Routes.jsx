@@ -7,6 +7,8 @@ import RegisterForm from "@/Pages/RegisterForm/RegisterForm";
 import NotFound from "@/Pages/NotFound/NotFound";
 import MyProfile from "@/Pages/MyProfie/MyProfile";
 import PlantDetails from "@/Components/PlantDetails/PlantDetails";
+import PrivateRoute from "./PrivateRoute";
+import { SpinnerNew } from "@/Components/Spinner/SpinnerNew";
 
 const router = createBrowserRouter([
   {
@@ -31,11 +33,11 @@ const router = createBrowserRouter([
   },
   {
     path:'myprofile',
-    Component:MyProfile,
+    element:<PrivateRoute><MyProfile></MyProfile></PrivateRoute>
   },
   {
     path:'/plants/:id',
-    Component:PlantDetails,
+    element:<PrivateRoute><PlantDetails></PlantDetails></PrivateRoute>
     // loader:fetch('./plants.json').then(res=>res.json()),
   },
   {

@@ -17,11 +17,7 @@ const PlantDetails = () => {
             });
     }, [])
     if (!loading) {
-
-        console.log(plants)
-        console.log(id);
         const desiredPlant = plants.find(plant => plant.plantId == id);
-        console.log(desiredPlant);
         const { plantName, category, price, rating, availableStock, careLevel, Bdescription, image, providerName } = desiredPlant;
         return (
             <>

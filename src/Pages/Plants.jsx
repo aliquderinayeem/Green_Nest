@@ -30,14 +30,14 @@ const Plants = () => {
     return (
         <>
             <NavBar></NavBar>
-            <div class="py-8 px-4 bg-primary-lightest">
-                <div class="max-w-7xl mx-auto">
-                    <div class="mb-8">
-                        <h1 class="text-primary text-3xl font-bold mb-2">All Indoor Plants</h1>
-                        <p class="text-gray-600">Browse our complete collection of indoor plants</p>
+            <div className="py-8 px-4 bg-primary-lightest">
+                <div className="max-w-7xl mx-auto">
+                    <div className="mb-8">
+                        <h1 className="text-primary text-3xl font-bold mb-2">All Indoor Plants</h1>
+                        <p className="text-gray-600">Browse our complete collection of indoor plants</p>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     </div>
                 </div>
             </div>

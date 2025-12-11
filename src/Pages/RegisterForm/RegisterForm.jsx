@@ -26,20 +26,25 @@ const RegisterForm = () => {
         const email = event.target.email.value;
         const name = event.target.name.value;
         const password = event.target.password.value;
+        const confirmPassword = event.target.confirmpassword.value;
         const image = event.target.photo.value;
         const terms = event.target.terms.checked;
         // Password Validation
-        // var passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
-        // if(!passwordRegex.test(password)){
-        //     toast("write Password Properly");
-        //     return;
-        // }
-        // console.log(email,' ',name,' ',password);
+        var passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+        if(!passwordRegex.test(password)){
+            toast.error("Password must have minimum 8 characters in length,at least one uppercase English letter,at least one lowercase English letter,at least one digit,at least one special character");
+            return;
+        }
+        console.log(email,' ',name,' ',password);
         setError('');
         setSuccess(false);
         if (!terms) {
             setError("Please Accept to the Terms of Service and Privacy Policy");
             toast(error);
+            return;
+        }
+        if(password!=confirmPassword){
+            toast.error("Passwords didn't match!!!!");
             return;
         }
         // Registering User
@@ -109,16 +114,19 @@ const RegisterForm = () => {
                                             </button>
                                         </div>
                                     </div>
-                                    {/* Confirm PassWord
+                                    {/* Confirm PassWord */}
                                     <div className="space-y-2">
                                         <label className="text-sm text-gray-700 pl-1 font-medium">
                                             Confirm Password
                                         </label>
                                         <div className="relative">
                                             <i className="fas fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                                            <input id="signup-confirm" type="password" placeholder="Re-enter your password" className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:outline-none focus:border-primary focus:bg-white transition-all"/>
+                                            <input name="confirmpassword" type={show ? 'text' : 'password'} placeholder="Re-enter your password" className="w-full pl-12 pr-14 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:outline-none focus:border-primary focus:bg-white transition-all" />
+                                            <button type="button" onClick={ShowPassword} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                                                {show ? <Eye></Eye> : <EyeOff></EyeOff>}
+                                            </button>
                                         </div>
-                                    </div> */}
+                                    </div>
                                     {/* Terms Condition CheckBox */}
                                     <div className="flex items-start gap-3 py-2">
                                         <input type="checkbox" name="terms" className="w-5 h-5 mt-0.5 rounded-lg border-2 border-gray-300 text-primary focus:ring-2 focus:ring-primary/20 accent-primary cursor-pointer" required="" />
