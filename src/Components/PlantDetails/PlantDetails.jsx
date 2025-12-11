@@ -2,12 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { SpinnerNew } from '../Spinner/SpinnerNew';
 import { ArrowLeft, Calendar, Heart, ShoppingCart, Star } from 'lucide-react';
+import { toast, Toaster } from 'sonner';
 
 const PlantDetails = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
     const [plants, setPlants] = useState([]);
     const { id } = useParams();
+    const DummyFunctionality=(e)=>{
+        e.preventDefault();
+        const name=e.target.name.value;
+        const date=e.target.date.value;
+        const time=e.target.time.value;
+        // console.log(name,date,time)
+        toast.success(`${name} booked a slot for Consultation at ${date}, ${time}`)
+    }
     useEffect(() => {
         fetch('../plants.json')
             .then(res => res.json())
@@ -22,6 +31,7 @@ const PlantDetails = () => {
         return (
             <>
                 <div className="min-h-screen bg-primary-lightest py-8 px-4">
+                    <Toaster richColors position="top-right" ></Toaster>
                     <div className="max-w-7xl mx-auto">
                         {/* Back Button */}
                         <button
@@ -126,15 +136,16 @@ const PlantDetails = () => {
                                 </p>
                             </div>
 
-                            <form className="space-y-4">
+                            <form onSubmit={DummyFunctionality}className="space-y-4">
                                 <div>
                                     <label htmlFor="name" className="block text-gray-700 mb-2">
                                         Your Name
                                     </label>
                                     <input
-                                        id="name"
+                                    required
+                                        name="name"
                                         type="text"
-                                        placeholder="Andrew Tate"
+                                        placeholder="Plant Lover"
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                                     />
                                 </div>
@@ -145,7 +156,8 @@ const PlantDetails = () => {
                                             Preferred Date
                                         </label>
                                         <input
-                                            id="date"
+                                        required
+                                            name="date"
                                             type="date"
                                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                                         />
@@ -156,7 +168,8 @@ const PlantDetails = () => {
                                             Preferred Time
                                         </label>
                                         <input
-                                            id="time"
+                                        required
+                                            name="time"
                                             type="time"
                                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                                         />
