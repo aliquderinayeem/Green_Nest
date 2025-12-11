@@ -101,7 +101,7 @@ const MyProfile = () => {
                                         </div>
                                     </div>
 
-                                    <div>
+                                    {/* <div>
                                         <label className="block text-gray-700 mb-2 font-medium">
                                             Email Address
                                         </label>
@@ -109,7 +109,7 @@ const MyProfile = () => {
                                             <i className="fas fa-envelope absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
                                             <input name="email" type="email" className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" />
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                     <div>
                                         <label className="block text-gray-700 mb-2 font-medium">

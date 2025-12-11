@@ -50,11 +50,9 @@ const LoginForm = () => {
     }
     const ForgotPaswordHandle = (event) => {
         event.preventDefault();
-        const email = emailRef;
-        console.log(email.current.value);
-        resetPassword(email)
-            .then(() => alert("check mail"))
-            .catch(err => console.log(err))
+        const email = emailRef.current.value;
+        console.log(email);
+        resetPassword(email);
     }
     return (
         <div>
@@ -136,7 +134,7 @@ const LoginForm = () => {
                                             <input type="checkbox" className="w-5 h-5 rounded-lg border-2 border-gray-300 text-primary focus:ring-2 focus:ring-primary/20 accent-primary cursor-pointer" />
                                             <span className="text-gray-600">Remember me</span>
                                         </label>
-                                        <button type="submit" className="text-primary hover:text-primary-light transition-colors" onClick={ForgotPaswordHandle}>
+                                        <button type="button" className="text-primary hover:text-primary-light transition-colors" onClick={ForgotPaswordHandle}>
                                             Forgot password?
                                         </button>
                                     </div>

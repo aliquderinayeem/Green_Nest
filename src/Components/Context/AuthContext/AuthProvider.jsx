@@ -76,12 +76,12 @@ const AuthProvider = ({ children }) => {
         }
     }
     const resetPassword = (email) => {
-        sendPasswordResetEmail(auth, email)
-            .then((result) => {
-                console.log(result);
+        return sendPasswordResetEmail(auth, email)
+            .then(() => {
+                toast.success("Password Reset Mail Sent Successfully")
             })
             .catch((error) => {
-                console.log(error)
+                toast.error("Something Error Happened")
             });
     }
     useEffect(() => {

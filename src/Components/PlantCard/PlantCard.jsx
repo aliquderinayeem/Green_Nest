@@ -7,7 +7,7 @@ const PlantCard = ({plant}) => {
     const {plantName,category,image,rating,description,price,availableStock,plantId}=plant;
     return (
         <>
-            <div className="plant-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer" onClick={()=>navigate(`/plants/${plantId}`)}>
+            <div className="plant-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer">
                 <div className="relative h-64 overflow-hidden">
                     <img src={image} alt="Monstera Deliciosa" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
                     <div className="absolute top-3 right-3 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm text-primary font-medium">
@@ -27,9 +27,9 @@ const PlantCard = ({plant}) => {
                             <span className="text-primary text-2xl font-bold">${price}</span>
                             <span className="text-gray-500 text-sm ml-2">{availableStock} in stock</span>
                         </div>
-                        <button className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-light transition-colors flex items-center gap-2">
-                            <i className="fas fa-shopping-cart"></i>
-                            Add to Cart
+                        <button className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-light transition-colors flex items-center gap-2"  onClick={()=>navigate(`/plants/${plantId}`)}>
+                            {/* <i className="fas fa-shopping-cart"></i> */}
+                            View Details
                         </button>
                     </div>
                 </div>
