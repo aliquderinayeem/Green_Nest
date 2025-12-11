@@ -10,7 +10,7 @@ const NavBar = () => {
         signOutUser();
     }
     const linksMiddle = <>
-        <NavLink className="font-medium text-primary" to='/'>Home</NavLink>
+        <NavLink className="font-medium text-gray-600 hover:text-primary transition-colors" to='/'>Home</NavLink>
         <NavLink className="font-medium text-gray-600 hover:text-primary transition-colors" to='/Plants'>Plants</NavLink>
         {
 

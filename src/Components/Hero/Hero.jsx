@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router';
 
 const Hero = () => {
+    const navigate=useNavigate();
     const [currentSlide, setCurrentSlide] = useState(1); // Start with slide 2 active as per your HTML
     const [slideInterval, setSlideInterval] = useState(null);
 
@@ -50,7 +52,7 @@ const Hero = () => {
                             <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Bring Nature Home</h1>
                             <p className="text-white/90 text-xl mb-8">Discover the perfect plants for your living space</p>
                             <button 
-                                className="px-8 py-3 bg-primary text-white rounded-lg hover:bg-primary-light transition-colors text-lg font-medium"
+                                className="px-8 py-3 bg-primary text-white rounded-lg hover:bg-primary-light transition-colors text-lg font-medium" onClick={()=>navigate('/plants')}
                             >
                                 Explore Plants
                             </button>

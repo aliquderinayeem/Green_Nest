@@ -366,3 +366,6 @@
   animation: spin 1s linear infinite;
 }
 
+.active{
+  color:var(--color-primary);
+}
