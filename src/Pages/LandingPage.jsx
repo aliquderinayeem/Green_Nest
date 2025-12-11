@@ -5,6 +5,7 @@ import Hero from '@/Components/Hero/Hero';
 import IndoorPlants from '@/Components/IndoorPlants/IndoorPlants';
 import NavBar from '@/Components/NavBar/NavBar';
 import PlantCareStatic from '@/Components/PlantCare/PlantCareStatic';
+import PlantCommunity from '@/Components/PlantCareCommunity/PlantCommunity';
 import React from 'react';
 import { Outlet } from 'react-router';
 
@@ -17,6 +18,7 @@ const LandingPage = () => {
             <PlantCareStatic></PlantCareStatic>
             <GreenExpert></GreenExpert>
             <EcoDecor></EcoDecor>
+            <PlantCommunity></PlantCommunity>
             <Footer></Footer>
         </div>
     );

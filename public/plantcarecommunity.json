@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah Martinez",
+    "role": "Urban Gardener",
+    "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
+    "rating": 5,
+    "text": "GreenNest transformed my apartment into a lush oasis! The care guides are incredibly detailed and the plants arrived in perfect condition. My Monstera is thriving!",
+    "plantPurchased": "Monstera Deliciosa"
+  },
+  {
+    "id": 2,
+    "name": "Michael Chen",
+    "role": "Plant Enthusiast",
+    "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
+    "rating": 5,
+    "text": "The expert advice I received was invaluable. I went from killing every plant to successfully caring for 15 different species. The GreenNest community is amazing!",
+    "plantPurchased": "Fiddle Leaf Fig"
+  },
+  {
+    "id": 3,
+    "name": "Emily Rodriguez",
+    "role": "Interior Designer",
+    "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400",
+    "rating": 5,
+    "text": "I recommend GreenNest to all my clients. The quality of plants is exceptional and the eco-friendly packaging shows they truly care about sustainability.",
+    "plantPurchased": "Snake Plant Collection"
+  },
+  {
+    "id": 4,
+    "name": "David Thompson",
+    "role": "First-Time Plant Parent",
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
+    "rating": 5,
+    "text": "As a complete beginner, I was nervous about keeping plants alive. The care tips and reminders from GreenNest made it so easy. My succulents are flourishing!",
+    "plantPurchased": "Succulent Starter Kit"
+  },
+  {
+    "id": 5,
+    "name": "Jessica Park",
+    "role": "Home Office Worker",
+    "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400",
+    "rating": 5,
+    "text": "Working from home became so much better with plants from GreenNest. The air-purifying plants not only look beautiful but also improved my workspace quality.",
+    "plantPurchased": "Peace Lily"
+  },
+  {
+    "id": 6,
+    "name": "Alex Johnson",
+    "role": "Plant Collector",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+    "rating": 5,
+    "text": "The rare plant selection is impressive! I finally found the Variegated Monstera I had been searching for. Fast shipping and perfect packaging every time.",
+    "plantPurchased": "Variegated Monstera"
+  }
+]
