@@ -2,14 +2,31 @@ import Footer from '@/Components/Footer/Footer';
 import IndoorPlants from '@/Components/IndoorPlants/IndoorPlants';
 import NavBar from '@/Components/NavBar/NavBar';
 import PlantCard from '@/Components/PlantCard/PlantCard';
-import Useplants from '@/Hooks/CustomHook';
+import { SpinnerNew } from '@/Components/Spinner/SpinnerNew';
 import { HomeIcon } from 'lucide-react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 
 const Plants = () => {
     const navigate = useNavigate();
-    const { plants, loading } = Useplants();
+    const [plants, setPlants] = useState([]);
+    const [loading,setLoading]=useState(true);
+    // const {plants,loading}=Useplants();
+    useEffect(() => {
+        fetch('../plants.json')
+            .then(res => res.json())
+            .then(plants => {
+                setPlants(plants);
+                setLoading(false);
+            });
+    }, );
+    if(loading){
+        return(
+            <>
+            <SpinnerNew></SpinnerNew>
+            </>
+        )
+    }
     return (
         <>
             <NavBar></NavBar>

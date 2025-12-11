@@ -19,8 +19,6 @@ const RegisterForm = () => {
     // Google Sign In
     const GoogleSignInHandle = () => {
         signInWithGoogle(auth, googleProvider)
-            .then(result => { toast("Logged In With Google") })
-            .catch(error => console.log(error));
 
     }
     const handleRegister = (event) => {
@@ -28,6 +26,7 @@ const RegisterForm = () => {
         const email = event.target.email.value;
         const name = event.target.name.value;
         const password = event.target.password.value;
+        const image = event.target.photo.value;
         const terms = event.target.terms.checked;
         // Password Validation
         // var passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
@@ -44,16 +43,9 @@ const RegisterForm = () => {
             return;
         }
         // Registering User
-        createUser(email, password)
-            .then(result => { setSuccess(true); result && toast("Account Created Successfully") })
-            .catch(error => {
-                const errorMessage = error.message || "Registration failed";
-                setError(errorMessage);
-                error &&
-                    toast.error(error.message);
-                    return;
-            }
-            );
+        createUser(email, password,name,image)
+        .then(res=>navigate('/'))
+        .catch(err=>console.log(err))
 
     }
     return (

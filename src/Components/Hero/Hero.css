@@ -1,0 +1,49 @@
+/* Hero.css */
+.hero-slide {
+    transition: opacity 500ms ease-in-out;
+}
+
+.slide-dot {
+    transition: all 300ms ease-in-out;
+}
+
+/* Smooth fade effect */
+.mySwiper .swiper-slide {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+}
+
+.mySwiper .swiper-slide-active,
+.mySwiper .swiper-slide-duplicate-active {
+    opacity: 1;
+}
+
+/* Navigation button styling */
+.swiper-button-next,
+.swiper-button-prev {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 20px !important;
+}
+
+/* Pagination dots */
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: white;
+    width: 32px;
+    border-radius: 4px;
+}

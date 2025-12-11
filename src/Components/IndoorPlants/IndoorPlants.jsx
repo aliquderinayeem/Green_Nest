@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PlantCard from '../PlantCard/PlantCard';
-import Useplants from '@/Hooks/CustomHook';
 import { useNavigate } from 'react-router';
+import { SpinnerNew } from '../Spinner/SpinnerNew';
 
-const IndoorPlants = () => {
-    const navigate=useNavigate();
-    const {plants,loading}=Useplants();
-    const HomePlants=plants.slice(0,3);
+const IndoorPlants = ({ onLoad }) => {
+    const [HomePlants, setHomePlants] = useState([]);
+    const navigate = useNavigate();
+    // const {plants,loading}=Useplants();
+    useEffect(() => {
+        fetch('../plants.json')
+            .then(res => res.json())
+            .then(plants => {
+                const HomePlants = plants.slice(0, 3);
+                setHomePlants(HomePlants);
+                if (onLoad) {
+                    onLoad();
+                }
+            });
+    }, );
     return (
         <>
             <section className="py-16 px-4 bg-white">
@@ -18,12 +29,12 @@ const IndoorPlants = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {
-                            HomePlants.map((plant,index)=><PlantCard key={index} plant={plant}></PlantCard>)
+                            HomePlants.map((plant, index) => <PlantCard key={index} plant={plant}></PlantCard>)
                         }
                     </div>
 
                     <div className="text-center mt-12">
-                        <button className="px-8 py-3 bg-primary text-white rounded-lg hover:bg-primary-light transition-colors text-lg font-medium"onClick={() => navigate('/plants')}>View All Plants</button>
+                        <button className="px-8 py-3 bg-primary text-white rounded-lg hover:bg-primary-light transition-colors text-lg font-medium" onClick={() => navigate('/plants')}>View All Plants</button>
                     </div>
                 </div>
             </section>

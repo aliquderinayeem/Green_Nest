@@ -1,10 +1,13 @@
 import React, { use, useState } from 'react';
 import { NavLink } from 'react-router';
 import { AuthContext } from '../Context/AuthContext/AuthContext';
+// import { toast, Toaster } from 'sonner';
 // import { Toaster, toast } from "sonner"
 
 const NavBar = () => {
     const { user, signOutUser } = use(AuthContext);
+    // user?console.log(user):"";
+    // user && toast("Account Created Successfully");
     const [expand, setExpand] = useState(false)
     const handleSignOut = () => {
         signOutUser();
@@ -24,6 +27,7 @@ const NavBar = () => {
     return (
         <>
             <nav className="sticky top-0 z-40 bg-white shadow-md">
+                {/* <Toaster position="top-right"></Toaster> */}
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
 
