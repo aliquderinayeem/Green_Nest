@@ -1,12 +1,14 @@
 import React, { use, useState } from 'react';
-import { NavLink } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../Context/AuthContext/AuthContext';
 // import { toast, Toaster } from 'sonner';
 // import { Toaster, toast } from "sonner"
 
 const NavBar = () => {
+    const navigate = useNavigate();
+    const [mobilemenuExpand, setMobileMenuExpand] = useState(false);
     const { user, signOutUser } = use(AuthContext);
-    // user?console.log(user):"";
+    user ? console.log(user) : "";
     // user && toast("Account Created Successfully");
     const [expand, setExpand] = useState(false)
     const handleSignOut = () => {
@@ -43,7 +45,7 @@ const NavBar = () => {
                         </div>
                         {
                             !user ?
-                                <div className="md:flex items-center gap-4">
+                                <div className="md:flex hidden items-center gap-4">
                                     {linksLeft1}
                                 </div>
                                 :
@@ -73,38 +75,55 @@ const NavBar = () => {
 
 
                         {/* Mobile Menu Button */}
-                        <button className="md:hidden p-2 rounded-lg hover:bg-gray-100">
+                        <button className="md:hidden p-2 rounded-lg hover:bg-gray-100" onClick={() => setMobileMenuExpand(!mobilemenuExpand)}>
                             <i className="fas fa-bars text-gray-700"></i>
                         </button>
                     </div>
 
-                    {/* Mobile Menu 
-                    <div id="mobile-menu" className="md:hidden hidden py-4 border-t border-gray-100">
-                        <div className="flex flex-col gap-2">
-                            <button onclick="showPage('home')" className="px-4 py-2 text-left rounded-lg transition-colors text-primary font-medium">Home</button>
-                            <button className="px-4 py-2 text-left text-gray-600 hover:bg-gray-50 rounded-lg transition-colors">Plants</button>
-                            <button className="px-4 py-2 text-left text-gray-600 hover:bg-gray-50 rounded-lg transition-colors">My Profile</button>
+                    {/* Mobile Menu  */}
+                    {
+                        mobilemenuExpand ?
+                            <>
+                                <div className="md:hidden py-4 border-t border-gray-100">
+                                    <div className="flex flex-col gap-2">
+                                        <button onClick={() => navigate('/')} className="px-4 py-2 text-left rounded-lg transition-colors text-primary font-medium">Home</button>
+                                        <button className="px-4 py-2 text-left text-gray-600 hover:bg-gray-50 rounded-lg transition-colors" onClick={() => navigate('/plants')}>Plants</button>
+                                        <button className="px-4 py-2 text-left text-gray-600 hover:bg-gray-50 rounded-lg transition-colors" onClick={() => navigate('/myprofile')}>My Profile</button>
 
-                            <div id="mobile-auth" className="flex flex-col gap-2 mt-2">
-                                <button className="px-4 py-2 text-primary hover:bg-primary-lightest rounded-lg transition-colors">Login</button>
-                                <button className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-light transition-colors">Register</button>
-                            </div>
+                                        {
+                                            !user ?
+                                                <>
+                                                    <div className="flex flex-col gap-2 mt-2">
+                                                        <button className="px-4 py-2 text-primary bg-gray-200 hover:bg-primary-lightest rounded-lg transition-colors" onClick={() => navigate('/login')}>Login</button>
+                                                        <button className="px-4 py-2 text-primary bg-gray-200 hover:bg-primary-lightest rounded-lg transition-colors" onClick={() => navigate('/register')}>Register</button>
+                                                    </div>
+                                                </>
+                                                :
+                                                <>
+                                                    <div className="flex-col gap-2 mt-2">
+                                                        <div className="flex items-center gap-3 px-4 py-2">
+                                                            <div className="w-10 h-10 rounded-full bg-primary-light flex items-center justify-center overflow-hidden">
+                                                                <img ssrc={user ? user.photoURL : 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400'} alt="User" className="w-full h-full object-cover" />
+                                                            </div>
+                                                            <div>
+                                                                <div className="font-medium">{user ? user.displayName : ''}</div>
+                                                                <div className="text-sm text-gray-500">{user ? user.email : ''}</div>
+                                                            </div>
+                                                        </div>
+                                                        {/* <button onClick={() => navigate('/myprofile')} className="px-4 py-2 text-left text-gray-600 hover:bg-gray-50 rounded-lg transition-colors">My Profile</button> */}
+                                                        <button onClick={handleSignOut} className="px-4 py-2 text-left text-red-600 hover:bg-red-50 rounded-lg transition-colors">Logout</button>
+                                                    </div>
+                                                </>
+                                        }
 
-                            <div id="mobile-user" className="hidden flex-col gap-2 mt-2">
-                                <div className="flex items-center gap-3 px-4 py-2">
-                                    <div className="w-10 h-10 rounded-full bg-primary-light flex items-center justify-center overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400" alt="User" className="w-full h-full object-cover" />
-                                    </div>
-                                    <div>
-                                        <div className="font-medium">Plant Lover</div>
-                                        <div className="text-sm text-gray-500">plantlover@example.com</div>
+
+
                                     </div>
                                 </div>
-                                <button className="px-4 py-2 text-left text-gray-600 hover:bg-gray-50 rounded-lg transition-colors">My Profile</button>
-                                <button onclick="logout()" className="px-4 py-2 text-left text-red-600 hover:bg-red-50 rounded-lg transition-colors">Logout</button>
-                            </div>
-                        </div>
-                    </div> */}
+                            </>
+                            :
+                            ''
+                    }
                 </div>
             </nav>
         </>

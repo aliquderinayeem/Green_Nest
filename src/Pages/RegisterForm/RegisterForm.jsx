@@ -25,7 +25,7 @@ const RegisterForm = () => {
             .catch(error => console.log(error));
 
     }
-    const handleRegister = (event) => {
+    const handleRegister = async (event) => {
         event.preventDefault();
         const email = event.target.email.value;
         const name = event.target.name.value;
